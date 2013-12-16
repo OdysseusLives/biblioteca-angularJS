@@ -9,6 +9,5 @@ angular.module('bibliotecaApp')
     ];
 
     $scope.welcomeMessage = 'Welcome to Biblioteca';
-    $scope.books= ['The Jungle Book'];
 
   });

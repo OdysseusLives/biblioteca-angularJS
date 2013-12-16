@@ -11,9 +11,18 @@
   {{ welcomeMessage }}
 </div>
 
-<div>
+<div ng-controller="BookCtrl">
  <h3>Available Books</h3>
-  <li ng-repeat="book in books">{{ book }}</li>
+  <ul ng-repeat="book in books | filter:isAvailable(book.title) ">
+    <li>{{ book.title }} checked out by: {{ book.checkedOutBy }}</li>
+    <button ng-click="checkout(book.title,'Aubrey')">Checkout</button>
+  </ul>
+
+  <h3>Unavailable Books</h3>
+  <ul ng-repeat="book in books | filter:!isAvailable(book.title) ">
+    <li>{{ book.title }} checked out by: {{ book.checkedOutBy }}</li>
+    <button ng-click="checkout(book.title,'Aubrey')">Checkout</button>
+  </ul>
 </div>
 
 <div class="footer">

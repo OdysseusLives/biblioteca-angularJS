@@ -23,8 +23,4 @@ describe('Controller: MainCtrl', function () {
   it('should see a welcome a message', function () {
     expect(scope.welcomeMessage).toBe('Welcome to Biblioteca');
   });
-
-  it('should display all available books', function () {
-    expect(scope.books).toEqual(['The Jungle Book']);
-  });
 });
