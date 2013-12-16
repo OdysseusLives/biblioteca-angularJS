@@ -19,4 +19,12 @@ describe('Controller: MainCtrl', function () {
   it('should attach a list of awesomeThings to the scope', function () {
     expect(scope.awesomeThings.length).toBe(3);
   });
+
+  it('should see a welcome a message', function () {
+    expect(scope.welcomeMessage).toBe('Welcome to Biblioteca');
+  });
+
+  it('should display all available books', function () {
+    expect(scope.books).toEqual(['The Jungle Book']);
+  });
 });

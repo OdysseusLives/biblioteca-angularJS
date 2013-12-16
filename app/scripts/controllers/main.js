@@ -7,4 +7,8 @@ angular.module('bibliotecaApp')
       'AngularJS',
       'Karma'
     ];
+
+    $scope.welcomeMessage = 'Welcome to Biblioteca';
+    $scope.books= ['The Jungle Book'];
+
   });
