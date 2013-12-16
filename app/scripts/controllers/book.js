@@ -8,18 +8,9 @@ angular.module('bibliotecaApp')
             $scope.books[bookName].checkedOutBy = personName;
         };
 
-
-
             $scope.isAvailable = function(bookName) {
             return $scope.books[bookName].checkedOutBy == '';
         }
     })
 
-    .filter('isAvailable', function () {
-        return function (input, itemType) {
-            var result = input + ' ' + itemType;
-            if (input >  1) result += 's';
-            return result;
-        }
-    });
 

@@ -24,4 +24,13 @@ describe('Controller: BookCtrl', function () {
         scope.checkout('The Jungle Book', 'Aubrey');
         expect(scope.books['The Jungle Book'].checkedOutBy).toBe('Aubrey');
     });
+
+    it('should know if a book is available', function() {
+        expect(scope.isAvailable('The Jungle Book')).toBeTruthy();
+    });
+
+    it('should know if a book is unavailable',function(){
+       scope.checkout('The Jungle Book','Aubrey');
+       expect(scope.isAvailable('The Jungle Book')).toBeFalsy();
+    });
 });

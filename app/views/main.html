@@ -13,15 +13,18 @@
 
 <div ng-controller="BookCtrl">
  <h3>Available Books</h3>
-  <ul ng-repeat="book in books | filter:isAvailable(book.title) ">
-    <li>{{ book.title }} checked out by: {{ book.checkedOutBy }}</li>
-    <button ng-click="checkout(book.title,'Aubrey')">Checkout</button>
+  <ul ng-repeat="book in books">
+    <li ng-show="isAvailable(book.title)">
+      {{ book.title }}
+      <button ng-click="checkout(book.title,'Aubrey')">Checkout</button>
+    </li>
   </ul>
 
   <h3>Unavailable Books</h3>
-  <ul ng-repeat="book in books | filter:!isAvailable(book.title) ">
-    <li>{{ book.title }} checked out by: {{ book.checkedOutBy }}</li>
-    <button ng-click="checkout(book.title,'Aubrey')">Checkout</button>
+  <ul ng-repeat="book in books">
+    <li ng-show="!isAvailable(book.title)">
+      {{ book.title }} has been checked out by {{ book.checkedOutBy }}
+    </li>
   </ul>
 </div>
 
